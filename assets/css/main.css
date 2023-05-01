@@ -1,0 +1,81 @@
+/* Color palette */
+:root {
+    --background-main: #7286D3;
+    --text-color: #FFFFFF;
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.app {
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(384px, 1fr));
+    grid-gap: 0 4px;
+}
+@media (max-width: 767px) {
+    .app {
+        grid-gap: 4px 0;
+    } 
+    .app__column {
+        height: 50vh;
+    }
+}
+.app__column {
+    background: var(--background-main);
+}
+.app__row {
+    padding: 32px 0;
+    display: flex;
+    justify-content: center;
+}
+.app__row--vertical {
+    height: 75%;
+    flex-direction: column;
+}
+@media (max-width: 767px) {
+    .app__row--vertical {
+        height: 50%;
+    } 
+}
+.app__select {
+    color: var(--text-color);
+    background: none;
+    width: 240px;
+    border: none;
+    font-size: 2rem;
+    text-align: center;
+}
+.app__select:focus {
+    outline: 0;
+}
+.app__select__option {
+    color: #000000;
+    font-size: 1rem;
+}
+.app__input {
+    color: var(--text-color);
+    background: none;
+    display: block;
+    border: none;
+    font-size: 5rem;
+    text-align: center;
+}
+.app__input::placeholder {
+    opacity: 0.5;
+    color: var(--text-color);
+}
+.app__input:focus {
+    outline: 0;
+}
+.app__input::-webkit-outer-spin-button, .app__input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+.app__result {
+    opacity: 0.5    ;
+    color: var(--text-color);
+    font-size: 5rem;
+    text-align: center;
+}

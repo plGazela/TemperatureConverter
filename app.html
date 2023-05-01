@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-EN">
+    <head>
+        <!-- Project info -->
+        <title>🌡️ Temperature Conventer</title>
+        <meta name="description" content="A simple temperature converter in your browser.">
+        <meta name="author" content="Jakub Gezela">
+
+        <!-- Other settings -->
+        <meta charset="UTF-8">
+        <meta name="theme-color" content="#FFFFFF">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        
+        <!-- Fonts and styles -->
+        <link href="assets/css/main.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    </head>
+    
+    <!-- Body -->
+    <body class="app">
+            <div class="app__column">
+                <div class="app__row">
+                    <select class="app__select">
+                        <option class="app__select__option" value="celsius" selected>Celsius</option>
+                        <option class="app__select__option" value="kelvin">Kelvin</option>
+                        <option class="app__select__option" value="fahrenheit">Fahrenheit</option>
+                        <option class="app__select__option" value="rankine">Rankine</option>
+                        <option class="app__select__option" value="reaumur">Reaumur</option>
+                    </select>
+                </div>
+
+                <div class="app__row app__row--vertical">
+                    <input class="app__input" type="number" placeholder="0" value="1">
+                </div>
+            </div>
+            <div class="app__column">
+                <div class="app__row">
+                    <select class="app__select">
+                        <option class="app__select__option" value="celsius">Celsius</option>
+                        <option class="app__select__option" value="kelvin" selected>Kelvin</option>
+                        <option class="app__select__option" value="fahrenheit">Fahrenheit</option>
+                        <option class="app__select__option" value="rankine">Rankine</option>
+                        <option class="app__select__option" value="reaumur">Reaumur</option>
+                    </select>
+                </div>
+                
+                <div class="app__row app__row--vertical"> 
+                    <p class="app__result">274.15</p>
+                </div>
+            </div>
+
+        <script src="assets/js/main.js" defer></script>
+    </body>
+</html>
