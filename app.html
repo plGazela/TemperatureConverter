@@ -18,7 +18,11 @@
     
     <!-- Body -->
     <body class="app">
+
+            <!-- Left side -->
             <div class="app__column">
+
+                <!-- Temeperature options -->
                 <div class="app__row">
                     <select class="app__select">
                         <option class="app__select__option" value="celsius" selected>Celsius</option>
@@ -29,11 +33,16 @@
                     </select>
                 </div>
 
+                <!-- User input -->
                 <div class="app__row app__row--vertical">
                     <input class="app__input" type="number" placeholder="0" value="1">
                 </div>
             </div>
+
+            <!-- Right side -->
             <div class="app__column">
+
+                <!-- Temeperature options -->
                 <div class="app__row">
                     <select class="app__select">
                         <option class="app__select__option" value="celsius">Celsius</option>
@@ -44,11 +53,13 @@
                     </select>
                 </div>
                 
+                <!-- Calculation result -->
                 <div class="app__row app__row--vertical"> 
-                    <p class="app__result">274.15</p>
+                    <p class="app__result">274.15 K</p>
                 </div>
             </div>
 
+        <!-- Logic -->
         <script src="assets/js/main.js" defer></script>
     </body>
 </html>

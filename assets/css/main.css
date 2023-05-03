@@ -4,28 +4,31 @@
     --text-color: #FFFFFF;
 }
 
+/* Default blocks */
 * {
     font-family: 'Montserrat', sans-serif;
 }
 
+/* Components */
+
+/* Body */
 .app {
     margin: 0;
     height: 100vh;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(384px, 1fr));
-    grid-gap: 0 4px;
+}
+
+/* Positioning */
+.app__column {
+    background: var(--background-main);
 }
 @media (max-width: 767px) {
-    .app {
-        grid-gap: 4px 0;
-    } 
     .app__column {
         height: 50vh;
     }
 }
-.app__column {
-    background: var(--background-main);
-}
+
 .app__row {
     padding: 32px 0;
     display: flex;
@@ -40,10 +43,12 @@
         height: 50%;
     } 
 }
+
+/* Select */
 .app__select {
+    width: 240px;
     color: var(--text-color);
     background: none;
-    width: 240px;
     border: none;
     font-size: 2rem;
     text-align: center;
@@ -55,17 +60,19 @@
     color: #000000;
     font-size: 1rem;
 }
+
+/* Input */
 .app__input {
+    display: block;
     color: var(--text-color);
     background: none;
-    display: block;
     border: none;
     font-size: 5rem;
     text-align: center;
 }
 .app__input::placeholder {
-    opacity: 0.5;
     color: var(--text-color);
+    opacity: 0.5;
 }
 .app__input:focus {
     outline: 0;
@@ -73,9 +80,11 @@
 .app__input::-webkit-outer-spin-button, .app__input::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
+
+/* Result */
 .app__result {
-    opacity: 0.5    ;
     color: var(--text-color);
     font-size: 5rem;
     text-align: center;
+    opacity: 0.5;
 }

@@ -1,17 +1,23 @@
+// Running calculations with the temperature unit change
 const leftTempEl = document.getElementsByClassName("app__select")[0];
 const rightTempEl = document.getElementsByClassName("app__select")[1];
 
 leftTempEl.addEventListener("change", calculateTemp);
 rightTempEl.addEventListener("change", calculateTemp);
 
+// Running calculations by entering the temperature
 const tempInput = document.getElementsByClassName("app__input")[0];
+
 tempInput.addEventListener("keyup", calculateTemp);
 
-
+// Temperature calculating function
 function calculateTemp() {
+
+    // Array with the results and variable with user value
     let temperaturesArray;
     let tempToConvert = Number(tempInput.value);
 
+    // Choosing proper calculations depending on the base temperature unit
     switch(leftTempEl.value) {
         case "celsius":
             temperaturesArray = celsiusConvertion(tempToConvert);
@@ -35,28 +41,31 @@ function calculateTemp() {
         temperaturesArray[key] = Math.round(temperaturesArray[key] * 100) / 100;
     }
 
-    // Displaing results
-    let tempResult = document.getElementsByClassName("app__result")[0]; 
+    // Displaying results depending on the right-side temperature unit
+    const tempResult = document.getElementsByClassName("app__result")[0];
+
     switch(rightTempEl.value) {
         case "celsius":
-            tempResult.textContent = temperaturesArray["celsius"];
+            tempResult.textContent = temperaturesArray["celsius"] + " °C";
             break;
         case "kelvin":
-            tempResult.textContent = temperaturesArray["kelvin"];
+            tempResult.textContent = temperaturesArray["kelvin"] + " K";
             break;
         case "fahrenheit":
-            tempResult.textContent = temperaturesArray["fahrenheit"];
+            tempResult.textContent = temperaturesArray["fahrenheit"] + " °F";
             break;
         case "rankine":
-            tempResult.textContent = temperaturesArray["rankine"];
+            tempResult.textContent = temperaturesArray["rankine"] + " °R";
             break;
         case "reaumur":
-            tempResult.textContent = temperaturesArray["reaumur"];
+            tempResult.textContent = temperaturesArray["reaumur"] + " °r";
             break;
     }
 }
 
-// Temperatures conversion
+// Temperatures conversions
+
+// Celsius [°C]
 function celsiusConvertion(celsiusTemp) {
     let convertedTemp = {
         celsius: celsiusTemp,
@@ -68,6 +77,8 @@ function celsiusConvertion(celsiusTemp) {
 
     return convertedTemp;
 }
+
+// Kelvin [K]
 function kelvinConversion(kelvinTemp) {
     let convertedTemp = {
         celsius: kelvinTemp - 273.15,
@@ -79,6 +90,8 @@ function kelvinConversion(kelvinTemp) {
 
     return convertedTemp;
 }
+
+// Fahrenheit [°F]
 function fahrenheitConversion(fahrenheitTemp) {
     let convertedTemp = {
         celsius: (fahrenheitTemp - 32) / 1.8,
@@ -90,6 +103,8 @@ function fahrenheitConversion(fahrenheitTemp) {
 
     return convertedTemp;
 }
+
+// Rankine [°R]
 function rankineConversion(rankineTemp) {
     let convertedTemp = {
         celsius: (rankineTemp - 32 - 459.67) / 1.8,
@@ -101,6 +116,8 @@ function rankineConversion(rankineTemp) {
 
     return convertedTemp;
 }
+
+// Reaumur [°r]
 function reaumurConversion(reaumurTemp) {
     let convertedTemp = {
         celsius: reaumurTemp * 1.25,

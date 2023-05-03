@@ -1,2 +1,2 @@
-# TemperatureConverter
-A simple temperature converter in your browser.
+# 🌡️ Temperature Conventer
+A simple temperature converter in your browser. The converter has the ability to calculate the most popular temperature units like Celsius, Kelvin, Fahrenheit, Rankine, and Reaumur.
